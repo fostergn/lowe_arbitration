@@ -1,0 +1,584 @@
+/*
+Theme Name: BlankSlate
+Theme URI: http://wordpress.org/themes/blankslate
+Author: TidyThemes
+Author URI: http://tidythemes.com/
+Description: <strong>UPDATE</strong> - 4.0+ is here, completely overhauled, yet again. As always, <a href="http://tidythemes.com/concept/#upgrading">use caution when upgrading</a> (tidythemes.com/concept/#upgrading) and <a href="http://tidythemes.com/concept/">learn the TidyThemes concept</a> (tidythemes.com/concept). &nbsp; &rarr; <em><strong>CAUTION</strong>: If you're child theming or have clients that are child theming on top of BlankSlate (not the recommended use), please do not blindly upgrade to newer versions.</em> &nbsp; &rarr; <strong>DESCRIPTION</strong>: BlankSlate is the definitive WordPress HTML5 boilerplate starter theme. We've carefully constructed the most clean and minimalist theme available anywhere for designers/developers to use as a base/foundation to build websites for clients or to build completely custom themes from scratch to release faster. Clean, semi-minified, unformatted and valid code, SEO-friendly, no programmer comments, standardized and as white label as possible and most importantly, CSS reset for cross-browser-compatability and no intrusive visual CSS styles added whatsoever. A perfect skeleton theme that blows any others like it (the subsequent underscores.me for example) completely out of the water, as they're simply too overcomplicated for what people really want in this kind of theme. Now comes with jQuery enqueued and ready to go. &nbsp; &rarr; <strong>SUPPORT</strong>: Please use the <a href="http://tidythemes.com/forum/">official support forum</a> (tidythemes.com/forum). Comments and suggestions for improving BlankSlate, please see "<a href="http://tidythemes.com/tidythemes-sucks/">TidyThemes Sucks!</a>" (tidythemes.com/tidythemes-sucks). Just getting started? <a href="http://tidythemes.com/want-to-learn-css/">Want to learn CSS?</a> (tidythemes.com/want-to-learn-css) &nbsp; &rarr; <strong>WHAT'S NEW?</strong>: We stripped down as much custom, extraneous, superfluous junk code as we could and greatly improved the HTML5 structure. <a href="http://make.wordpress.org/themes/author/chipbennett/">Chip Bennett</a> (make.wordpress.org/themes/author/chipbennett), a highly experienced programmer and official WordPress administrator, worked closely with us to audit the theme code for quality. <a href="http://themes.trac.wordpress.org/changeset?old_path=/blankslate/3.3&new_path=/blankslate/4.0">See</a> (themes.trac.wordpress.org/changeset?old_path=/blankslate/3.3&new_path=/blankslate/4.0) just how much we've revamped things. Last, but not least, BlankSlate has now been <a href="https://github.com/tidythemes/blankslate">opened up on GitHub</a> (github.com/tidythemes/blankslate) if anyone would like to make suggested code additions/improvements. Thank you for using BlankSlate.
+Version: 4.0.2
+License: GNU General Public License
+License URI: https://www.gnu.org/licenses/gpl.html
+Tags: black, blue, white, light, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
+Text Domain: blankslate
+
+BlankSlate WordPress Theme © 2011-2014 TidyThemes
+BlankSlate is distributed under the terms of the GNU GPL
+*/
+
+/*html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}
+.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html::-webkit-scrollbar { 
+    display: none; 
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+*:focus {
+    outline: 0;
+}
+
+body {
+	background: url('img/bg-bleed.png');
+	background-size: cover;
+	line-height:1.5;
+}
+
+a {
+	color:none !important;
+	text-decoration: none;
+}
+
+a:-webkit-any-link {
+	color:none !important;
+}
+
+a:visited {
+	color:none !important;
+	text-decoration:none;
+}
+
+.english {
+	display:block;
+}
+
+.french {
+	display:none;
+}
+
+.spanish {
+	display:none;
+}
+
+.italian {
+	display:none;
+}
+
+.english-nav {
+	display:block;
+}
+
+.french-nav {
+	display:none;
+}
+
+nav {
+	width:auto;
+	min-width: 17.5%;
+	height:97vh;
+	background:rgba(255,255,255,0.75);
+	background-image: url('img/logo.png');
+	background-size: 65%;
+	background-repeat: no-repeat;
+	background-position: 20% 5%;
+	box-shadow:0px 0px 15px #FFFFFF;
+	margin:0;padding:0;
+	position:fixed;
+	top:0;left:0;
+}
+nav ul:hover li a{
+	color:gray;
+}
+nav ul {
+	margin: 75% 5% 5% 5%;
+	list-style: none;
+	padding:0px;
+
+}
+nav ul li {
+	font-size:16pt;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	line-height: 3;
+	width:100%;
+	font-variant: small-caps;
+	text-transform:lowercase;
+	padding-left:40px;
+}
+nav ul li:last-child {
+	margin:30px 0;
+	padding:0;
+	display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+}
+nav ul li a {
+	color:black;
+	transition: 250ms all;
+	-webkit-transition: 250ms all;
+}
+nav ul li a:hover {
+	color:black;
+	}
+nav ul li img {
+	transition: 250ms all;
+	-webkit-transition: 250ms all;
+	width: 13%;
+	height: 100%;
+	opacity:.8;
+}
+nav ul:hover li img {
+	opacity: 0.5;
+}
+nav ul li img:hover {
+	opacity: 1;
+}
+#navBlock {
+	display:none;
+	z-index:6;
+}
+footer {
+	width:100%;
+	height:3%;
+	background: rgba(0,0,0,0.75);
+	position:fixed;
+	bottom:0;left:0;
+}
+footer ul {
+	text-decoration:none;
+	width:80%;
+	margin:0 auto;
+		color:gray;
+}
+footer ul li {
+	margin:0.5% 2%;
+	display:inline-block;
+	width:15%;
+	color:white;
+	padding:0;
+	text-align: justify;
+	font-size: 9px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+footer ul li a  {
+	color:#fff;
+}
+
+footer ul li span {
+    width: 100%;
+    display: inline-block;
+}
+main {
+	margin:0 0 3% 35%;
+	width:auto;
+}
+main h1 {
+	width:25%;
+	margin: 10% 0 0 0;
+	text-align: center;
+	color:white;
+	font-family: 'Cinzel', serif;
+	font-size: 36px;
+	font-weight:bold;
+}
+main article div {
+	width:30%;
+	background-color: white;
+	margin-top: -1.75%;
+	box-shadow: 0 0 20px rgba(0,0,0,0.5);
+	min-width:250px;
+}
+main article div p {
+	padding:5%;
+	text-align: justify;
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+}
+#home article div:nth-of-type(2) {
+margin: -5% 0 0 30%;
+}
+#home article div:nth-of-type(3) {
+margin: -1% 0 0 8.3%;
+}
+#who article div:nth-of-type(2) {
+margin: -5% 0 0 32%;
+}
+#who article div:nth-of-type(3) {
+margin: -5% 0 0 0%;
+}
+#who article div:nth-of-type(4) {
+margin: -5% 0 0 32%;
+}
+#what article div:nth-of-type(2) {
+margin: -25% 0 0 40%;
+}
+#what article div:nth-of-type(3), #what article div:nth-of-type(4) {
+margin: 0% 0 0 40%;
+}
+#activities article div {
+	width:75%;
+}
+#activities article div ul li {
+	list-style: circle;
+	margin-bottom: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+}
+
+#transactions article div {
+	width:75%;
+	padding-bottom:20px;
+}
+
+#transactions article p {
+	font-weight: bold;
+    text-decoration: underline;
+}
+
+#transactions article div ul li {
+	list-style: circle;
+	margin-bottom: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+}
+
+#transactions-nav {
+	text-align:center;
+	padding:25px 10px; 
+}
+
+#transactions-nav li {
+	display:inline;
+}
+
+#transactions-nav li:after {
+	content: "|";
+	background-color:#fff;
+}
+
+#transactions-nav li:last-child:after {
+	content: "";
+}
+
+#transactions-nav a {
+    color: #000;
+}
+
+.ui-tabs-active {
+	font-style: oblique;
+    font-weight: bold;
+}
+
+.ui-tabs-panel {
+	position:relative;
+}
+
+.ui-tabs-panel:before {
+	content: "";
+	position:absolute;
+	top:0;
+	left:5%;
+	height:1px;
+	width:90%;
+	border-bottom:1px solid #ccc;
+}
+
+@media (max-width:1200px) {
+nav {
+	width:auto;
+	min-width: 25%;
+	height:97vh;
+}
+
+footer ul li {
+	margin:0.5% 0 0 0;
+	display:inline;
+	width:10%;
+	color:white;
+	padding:0 1%;
+	letter-spacing: 0px;
+	text-align: justify;
+	font-size: 10px;
+	font-family: 'Open Sans', sans-serif;
+}
+footer ul li span {
+    width: 100%;
+    display: inline;
+}
+main {
+	margin:0 0 10% 33.33%;
+	width:auto;
+}
+main h1 {
+	width:33.33%;
+	margin: 10% 0 0 0;
+	text-align: center;
+	color:white;
+	font-family: 'Cinzel', serif;
+	font-size: 36px;
+	font-weight:bold;
+}
+#home article div, #who article div, #what article div {
+	width:33.33%;
+	background-color: white;
+	margin-top: -3.25%;
+	min-width:200px;
+}
+#home article div p {
+	padding:5%;
+	text-align: justify;
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+}
+#home article div:nth-of-type(2) {
+margin: -5% 0 0 33.33%;
+}
+}
+
+#portrait {
+	margin-left:25%;
+}
+
+@media (max-width:800px) {
+nav ul {
+	margin: 75% 0 0 0;
+	padding-left:5%;
+	list-style: none;
+}
+
+nav ul li:last-child {
+	margin:50px 0;
+	padding:0;
+	display: flex;
+    justify-content: space-around;
+    position:relative;
+}
+
+nav ul li img {
+	margin: 0 0 0 10%;
+		transition: 250ms all;
+	-webkit-transition: 250ms all;
+	width:10%;
+}
+footer {
+	width:100%;
+	height:5%;
+	background: rgba(0,0,0,0.75);
+	position:fixed;
+	bottom:0;left:0;
+}
+footer ul li {
+	margin:1% auto 1% auto;
+	display:inline-block;
+	width:25%;
+	color:white;
+	padding:0 3%;
+	text-align: justify;
+	font-size: 10px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+main {
+	margin:0 0 10% 33.33%;
+	width:auto;
+}
+main h1 {
+	width:100%;
+	margin: 10% 0 0 0;
+	text-align: center;
+	font-weight:bold;
+}
+#home article div {
+	width:75%;
+	margin:0 auto;
+}
+#home article div p {
+}
+#home article div:nth-of-type(2) {
+	margin:0 auto;
+}
+#home article div:nth-of-type(3) {
+margin:0 auto;
+}
+}
+
+#contact #portrait {
+	text-align:center;
+}
+
+@media (max-width:600px) {
+
+body {
+	background-size: contain;
+}
+
+nav {
+	width:100%;
+	height:5%;
+	background-color:rgba(255,255,255,0.75);
+	background-image: url('img/logoMobile.png'), url('img/navActivate.png');
+	background-size:35%, 4%;
+	background-repeat: no-repeat, no-repeat;
+	background-position: 5% 50%, 90% 50%;
+	box-shadow:0px 0px 15px #FFFFFF;
+	margin:0;padding:0;
+	overflow:hidden;
+	position:fixed;
+	top:0;left:0;
+		transition: 250ms z-index, 0ms background-image, 250ms background-color;
+	-webkit-transition: 250ms z-index, 0ms background-image, 250ms background-color;
+	z-index:6;
+}
+nav:hover {
+	background-image: url('img/logoMobileWhite.png'), url('img/navDeactivate.png');
+	background-size:35%, 4%;
+	background-repeat: no-repeat, no-repeat;
+	background-position: 5% 0.8%, 90% 1.25%;
+	height:100%;
+	background-color: rgba(0,0,0,0.75);
+	z-index:4;
+}
+nav ul {
+	opacity:1;
+	margin:0;
+}
+nav ul li {
+	font-size:24pt;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	line-height: 3;
+
+	width:100%;
+	font-variant: small-caps;
+}
+nav ul li a {
+	color:white;
+	transition: 250ms all;
+	-webkit-transition: 250ms all;
+}
+nav ul li img {
+	margin: 0 0 0 0%;
+		transition: 250ms all;
+	-webkit-transition: 250ms all;
+	width:10%;
+}
+nav ul:hover li img {
+	opacity: 0.5;
+}
+nav ul li img:hover {
+	opacity: 1;
+}
+#navBlock {
+	z-index:5;
+	display:inherit;
+	width:20%;
+	height:10%;
+	position: fixed;
+	top:0;
+	right:0;
+}
+footer {
+	width:100%;
+	height:4%;
+	background: rgba(0,0,0,0.75);
+	position:fixed;
+	bottom:0;left:0;
+}
+footer ul {
+	text-decoration:none;
+	width:80%;
+	margin:0 0% 0 0%;
+}
+footer ul li {
+	margin:0;
+	display:inline-block;
+	width:auto;
+	color:white;
+	padding:0;
+	text-align: center;
+	font-size: 10px;
+	font-family: 'Open Sans', sans-serif;
+}
+footer ul li span {
+	display:none;
+}
+footer ul li:nth-of-type(2) {
+	color:rgb(200,200,200);
+	margin:0 2%;
+}
+footer ul li:nth-of-type(4), 
+footer ul li:nth-of-type(5) {
+	display:none;
+}
+
+.divider:nth-of-type(3), .divider:nth-of-type(4){
+	display:none;
+}
+
+main {
+	margin:0;
+	width:auto;
+}
+main h1 {
+	width:100%;
+	margin: 20% 0 0 0;
+	text-align: center;
+	color:white;
+	font-family: 'Cinzel', serif;
+	font-size: 24px;
+	text-shadow: 0 0 20px rgba(0,0,0,0.5);
+	font-weight:bold;
+}
+#home article div {
+	width:80%;
+	background-color: white;
+	margin-top: -1.75%;
+	box-shadow: none;
+}
+#home article div p {
+	padding:5%;
+	text-align: justify;
+	font-size: 12px;
+	line-height: 1.5;
+	font-family: 'Open Sans', sans-serif;
+}
+#home article div:nth-of-type(2) {
+margin: 0 0 0 20%;
+}
+#home article div:nth-of-type(3) {
+margin: 0 0 0 8.3%;
+}
+
+#transactions article div {
+	width:100%;
+}
+
+#contact #portrait {
+	width:70%;
+}
+
+#activities article div {
+    width: 100%;
+}
+
+#what article div {
+	width:80%;
+	background-color: white;
+	margin-top: -3.25%;
+	min-width:200px;
+}
+
+#what article div:nth-of-type(2), #what article div:nth-of-type(3), #what article div:nth-of-type(4) {
+    margin: 5% 0 0 19%;
+}
